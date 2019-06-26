@@ -6,70 +6,17 @@
                 color:green;
                 text-align: center;
             }
+            
             body {
                 color:blue;
             }
 
-            #Mercury {
-                position: absolute;
-                left: 75px;
-                top: 500px;
-            }
-            
-            #Venus {
-                position: absolute;
-                left: 395px;
-                top: 500px;
+            td{
+                width:500px;
+                height:500px;
             }
 
-            #Moon {
-                position: absolute;
-                left: 675px;
-                top: 500px;
-            }
 
-            #Mars {
-                position: absolute;
-                left: 75px;
-                top: 705px;
-            }
-
-            #Jupiter {
-                position: absolute;
-                left: 395px;
-                top: 705px;
-            }
-
-            #Saturn {
-                position: absolute;
-                left: 665px;
-                top: 705px;
-            }
-
-            #Uranus {
-                position: absolute;
-                left: 75px;
-                top: 905px;
-            }
-
-            #Neptune {
-                position: absolute;
-                left: 395px;
-                top: 905px;
-            }
-
-            #Pluto {
-                position: absolute;
-                left: 665px;
-                top: 905px;
-            }
-
-            #Sun {
-                position: absolute;
-                left: 75px;
-                top: 1165px;
-
-            }
             
               </style>
         </head>
@@ -80,41 +27,63 @@
                
                 <form>
                     Enter your weight on Earth in kg:<br>
+                    
+                    <table>
+                    
                     <input type="text" id="Earth" name="earth">
                     <br>
-                    <input type="text" id="Mercury" name="mercury">
-                    <br>
-                    <input type="text" id="Venus" name="venus">
-                    <br>
-                    <input type="text" id="Moon" name="moon">
-                    <br>
-                    <input type="text" id="Mars" name="mars">
-                    <br>
-                    <input type="text" id="Jupiter" name="jupiter">
-                    <br>
-                    <input type="text" id="Saturn" name="saturn">
-                    <br>
-                    <input type="text" id="Uranus" name="uranus">
-                    <br>
-                    <input type="text" id="Neptune" name="neptune">
-                    <br>
-                    <input type="text" id="Pluto" name="pluto">
-                    <br>
-                    <input type="text" id="Sun" name="sun">
-                    <br>
-                    <input type="submit" id="button" value="Caculate">
-                </form>
+                    
+                    <tr>
+                    
+                    <td><img src="imgs/Mercury.jpg" width ="300" height ="200"><input type="text" id="Mercury" name="mercury"></td>
+                   
+                    <td> <img src="imgs/Venus.jpg" width ="300" height="200"><input type="text" id="Venus" name="venus"></td>
+                   
+                    <td><img src="imgs/Moon.jpg" width ="300" height="200"><input type="text" id="Moon" name="moon"></td>
+                 
+                    </tr>
+                   
+                    <tr> 
+                    
+                    <td><img src="imgs/Mars.jpg" width ="300" height="200"><input type="text" id="Mars" name="mars"></td>
+                   
+                    <td><img src="imgs/Jupiter.jpg" width="300" height="200"><input type="text" id="Jupiter" name="jupiter"></td>
+                   
+                    <td><img src="imgs/Saturn.jpg" width ="300" height="200"><input type="text" id="Saturn" name="saturn"></td>
+              
+                    </tr>
+                  
+                    <tr>  
+                    <td><img src="imgs/Uranus.jpg" width ="300" height="200"><input type="text" id="Uranus" name="uranus"></td>
+                    
+                    <td><img src="imgs/Neptune.jpg" width ="300" height="200"><input type="text" id="Neptune" name="neptune"></td>
+                  
+                    <td> <img src="imgs/Pluto.jpg" width ="300" height="200"><input type="text" id="Pluto" name="pluto"></td>
+                  
+                    </tr>
 
-                <img src="imgs/Mercury.jpg" width ="300" height ="200">
-                <img src="imgs/Venus.jpg" width ="300" height="200">
-                <img src="imgs/Moon.jpg" width ="300" height="200">
-                <img src="imgs/Mars.jpg" width ="300" height="200">
-                <img src="imgs/Jupiter.jpg" width="300" height="200">
-                <img src="imgs/Saturn.jpg" width ="300" height="200">
-                <img src="imgs/Uranus.jpg" width ="300" height="200">
-                <img src="imgs/Neptune.jpg" width ="300" height="200">
-                <img src="imgs/Pluto.jpg" width ="300" height="200">
-                <img src="imgs/Sun.jpg" width ="1235" height="600">
+                    <tr>
+                    <td> <img src="imgs/Sun.jpg" width ="1235" height="600"><input type="text" id="Sun" name="sun"></td>
+                    
+                    </tr>
+
+                    <input type="submit" id="button" value="Caculate">
+                
+                </table>
+                
+            </form>
+
+                
+
+                
+               
+                
+                
+                
+                
+                
+               
+               
                 
             
             </body>

@@ -89,6 +89,20 @@
                 background-size: cover;
             }
 
+            #ioTd{
+                background-image: url("imgs/Io.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+            #europaTd{
+                background-image: url("imgs/Europa.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+
+
+
             #Mercury{ 
                 width: 55px;
                 height:20px;
@@ -139,6 +153,16 @@
                 height:20px;
             }
 
+            #Io{
+                width: 55px;
+                height:20px;
+            }
+
+            #Europa{
+                width:55px;
+                height:20px;
+            }
+
               </style>
         </head>
             
@@ -185,6 +209,8 @@
 
                     <tr>
                     <td id ="sunTd"><input type="text" id="Sun" name="sun"></td>
+                    <td id ="ioTd"><input type="text" id="Io" name="io"></td>
+                    <td id ="europaTd"><input type="text" id="Europa" name="europa"></td>
                     
                     </tr>
 
@@ -210,6 +236,8 @@
                     var neptune=document.getElementById("Neptune");
                     var pluto=document.getElementById("Pluto");
                     var sun=document.getElementById("Sun");
+                    var io=document.getElementById("Io");
+                    var europa=document.getElementById("Europa");
 
 
                     document.getElementById("button").onclick = function (e) {
@@ -224,6 +252,8 @@
                     neptune.value=(earth.value)*(1.19);
                     pluto.value=(earth.value)*(0.06);
                     sun.value=(earth.value)*(27.08);
+                    io.value=(earth.value)*(0.18);
+                    europa.value=(earth.value)*(0.13);
 
                 };
         </script>

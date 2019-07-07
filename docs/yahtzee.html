@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        td {
+            border: 1px solid black;
+        }
+
+        .diceCol{
+            width: 140px;
+            height: 140px;
+        }
+
+        .combinationCol{
+            width: 70px;
+            height: 70px;
+        }
+
+        .combinationCol img{
+            width:68px;
+            height:68px;
+        }
+
+        .diceCol img{
+            width:138px;
+            height:138px;
+        }
+
+        .emptyRow .combinationCol img{
+            opacity: 0.25;
+        }
+
+        button{
+            width:100%;
+            height:68px;
+        }
+        </style>
+
+        <script>
+        function createDieImg(){
+            var srcs = ["imgs/one.jpg", "imgs/two.jpg", "imgs/three.jpg", "imgs/four.jpg", "imgs/five.jpg", "imgs/six.jpg"];
+            var index = Math.floor(Math.random() * srcs.length);
+            var src = srcs[index]; 
+            var img = document.createElement("img");
+            img.setAttribute("src", src);
+            img.setAttribute("data-side", index+1);
+            return img;
+        }
+
+        function roll() {
+            var die1Img = createDieImg();
+            document.getElementById("die1").appendChild(die1Img);
+
+            var die2Img = createDieImg();
+            document.getElementById("die1").appendChild(die2Img);
+
+            var die3Img = createDieImg();
+            document.getElementById("die1").appendChild(die3Img);
+
+            var die4Img = createDieImg();
+            document.getElementById("die1").appendChild(die4Img);
+
+            var die5Img = createDieImg();
+            document.getElementById("die1").appendChild(die5Img);
+        }
+        </script>
+
+    </head>
+    <body>
+        <table>
+            <tr class="emptyRow">
+                <td><button onclick="roll()">Roll</button></td>
+                <td class="combinationCol"><img src="imgs/one.jpg"></td>
+                <td class="combinationCol"><img src="imgs/one.jpg"></td>
+                <td class="combinationCol"><img src="imgs/one.jpg"></td>
+                <td class="combinationCol"></td>
+                <td class="combinationCol"></td>
+            </tr>
+            <tr class="emptyRow">
+                <td rowspan="2" class="diceCol" id="die1"></td>
+                <td class="combinationCol"><img src="imgs/two.jpg"></td>
+                <td class="combinationCol"><img src="imgs/two.jpg"></td>
+                <td class="combinationCol"><img src="imgs/two.jpg"></td>
+                <td class="combinationCol"></td>
+                <td class="combinationCol"></td>
+            </tr>
+            <tr class="emptyRow">
+                <td class="combinationCol"><img src="imgs/three.jpg"></td>
+                <td class="combinationCol"><img src="imgs/three.jpg"></td>
+                <td class="combinationCol"><img src="imgs/three.jpg"></td>
+                <td class="combinationCol"></td>
+                <td class="combinationCol"></td>
+            </tr>
+            <tr class="emptyRow">
+                    <td rowspan="2" class="diceCol" id="die2"></td>
+                    <td class="combinationCol"><img src="imgs/four.jpg"></td>
+                    <td class="combinationCol"><img src="imgs/four.jpg"></td>
+                    <td class="combinationCol"><img src="imgs/four.jpg"></td>
+                    <td class="combinationCol"></td>
+                    <td class="combinationCol"></td>
+                </tr>
+                <tr class="emptyRow">
+                    <td class="combinationCol"><img src="imgs/five.jpg"></td>
+                    <td class="combinationCol"><img src="imgs/five.jpg"></td>
+                    <td class="combinationCol"><img src="imgs/five.jpg"></td>
+                    <td class="combinationCol"></td>
+                    <td class="combinationCol"></td>
+                </tr>
+                <tr class="emptyRow">
+                    <td rowspan="2" class="diceCol" id="die3"></td>
+                    <td class="combinationCol"><img src="imgs/six.jpg"></td>
+                    <td class="combinationCol"><img src="imgs/six.jpg"></td>
+                    <td class="combinationCol"><img src="imgs/six.jpg"></td>
+                    <td class="combinationCol"></td>
+                    <td class="combinationCol"></td>
+                </tr>
+                <tr class="emptyRow">
+                    <td class="combinationCol"><img src="imgs/any.jpg"></td>
+                    <td class="combinationCol"><img src="imgs/any.jpg"></td>
+                    <td class="combinationCol"><img src="imgs/any.jpg"></td>
+                    <td class="combinationCol"></td>
+                    <td class="combinationCol"></td>
+                </tr>
+                <tr class="emptyRow">
+                    <td rowspan="2" class="diceCol" id="die4"></td>
+                    <td class="combinationCol"><img src="imgs/any.jpg"></td>
+                    <td class="combinationCol"><img src="imgs/any.jpg"></td>
+                    <td class="combinationCol"><img src="imgs/any.jpg"></td>
+                    <td class="combinationCol"><img src="imgs/any.jpg"></td>
+                    <td class="combinationCol"></td>
+                </tr>
+                <tr class="emptyRow">
+                    <td class="combinationCol"><img src="imgs/one.jpg"></td>
+                    <td class="combinationCol"><img src="imgs/two.jpg"></td>
+                    <td class="combinationCol"><img src="imgs/three.jpg"></td>
+                    <td class="combinationCol"><img src="imgs/four.jpg"></td>
+                    <td class="combinationCol"><img src="imgs/five.jpg"></td>
+                </tr>
+                <tr class="emptyRow">
+                    <td rowspan="2" class="diceCol" id="die5"></td>
+                    <td class="combinationCol"><img src="imgs/two.jpg"></td>
+                    <td class="combinationCol"><img src="imgs/three.jpg"></td>
+                    <td class="combinationCol"><img src="imgs/four.jpg"></td>
+                    <td class="combinationCol"><img src="imgs/five.jpg"></td>
+                    <td class="combinationCol"><img src="imgs/six.jpg"></td>
+                </tr>
+                <tr class="emptyRow">
+                    <td class="combinationCol"><img src="imgs/any.jpg"></td>
+                    <td class="combinationCol"><img src="imgs/any.jpg"></td>
+                    <td class="combinationCol"><img src="imgs/any.jpg"></td>
+                    <td class="combinationCol"><img src="imgs/any.jpg"></td>
+                    <td class="combinationCol"><img src="imgs/any.jpg"></td>
+                </tr>
+                <tr class="emptyRow">
+                    <td></td>
+                    <td class="combinationCol"><img src="imgs/any.jpg"></td>
+                    <td class="combinationCol"><img src="imgs/any.jpg"></td>
+                    <td class="combinationCol"><img src="imgs/any.jpg"></td>
+                    <td class="combinationCol"><img src="imgs/any.jpg"></td>
+                    <td class="combinationCol"><img src="imgs/any.jpg"></td>
+                </tr>
+        </table>
+    </body>
+</html>

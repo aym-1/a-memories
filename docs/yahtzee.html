@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
+            <link href="https://fonts.googleapis.com/css?family=Mountains+of+Christmas&display=swap" rel="stylesheet">
+
         <style>
         td {
             border: 1px solid black;
@@ -9,6 +11,7 @@
         .diceCol{
             width: 140px;
             height: 140px;
+            text-align : center;
         }
 
         .combinationCol{
@@ -34,6 +37,16 @@
             width:100%;
             height:68px;
         }
+
+        .keeping img{
+            width:110px;
+            height:110px;
+        }
+
+        .desc {
+            text-align: center;
+            font-family: 'Mountains of Christmas', cursive;
+        }
         </style>
 
         <script>
@@ -52,16 +65,20 @@
             document.getElementById("die1").appendChild(die1Img);
 
             var die2Img = createDieImg();
-            document.getElementById("die1").appendChild(die2Img);
+            document.getElementById("die2").appendChild(die2Img);
 
             var die3Img = createDieImg();
-            document.getElementById("die1").appendChild(die3Img);
+            document.getElementById("die3").appendChild(die3Img);
 
             var die4Img = createDieImg();
-            document.getElementById("die1").appendChild(die4Img);
+            document.getElementById("die4").appendChild(die4Img);
 
             var die5Img = createDieImg();
-            document.getElementById("die1").appendChild(die5Img);
+            document.getElementById("die5").appendChild(die5Img);
+        }
+
+        function select(dieTd){
+            dieTd.classList.add("keeping");
         }
         </script>
 
@@ -70,6 +87,7 @@
         <table>
             <tr class="emptyRow">
                 <td><button onclick="roll()">Roll</button></td>
+                <td rowspan="6" class="desc">SCHOOL</td>
                 <td class="combinationCol"><img src="imgs/one.jpg"></td>
                 <td class="combinationCol"><img src="imgs/one.jpg"></td>
                 <td class="combinationCol"><img src="imgs/one.jpg"></td>
@@ -77,7 +95,7 @@
                 <td class="combinationCol"></td>
             </tr>
             <tr class="emptyRow">
-                <td rowspan="2" class="diceCol" id="die1"></td>
+                <td rowspan="2" class="diceCol" id="die1" onclick="select(this)"></td>
                 <td class="combinationCol"><img src="imgs/two.jpg"></td>
                 <td class="combinationCol"><img src="imgs/two.jpg"></td>
                 <td class="combinationCol"><img src="imgs/two.jpg"></td>
@@ -92,7 +110,7 @@
                 <td class="combinationCol"></td>
             </tr>
             <tr class="emptyRow">
-                    <td rowspan="2" class="diceCol" id="die2"></td>
+                    <td rowspan="2" class="diceCol" id="die2" onclick="select(this)"></td>
                     <td class="combinationCol"><img src="imgs/four.jpg"></td>
                     <td class="combinationCol"><img src="imgs/four.jpg"></td>
                     <td class="combinationCol"><img src="imgs/four.jpg"></td>
@@ -107,7 +125,7 @@
                     <td class="combinationCol"></td>
                 </tr>
                 <tr class="emptyRow">
-                    <td rowspan="2" class="diceCol" id="die3"></td>
+                    <td rowspan="2" class="diceCol" id="die3" onclick="select(this)"></td>
                     <td class="combinationCol"><img src="imgs/six.jpg"></td>
                     <td class="combinationCol"><img src="imgs/six.jpg"></td>
                     <td class="combinationCol"><img src="imgs/six.jpg"></td>
@@ -115,6 +133,7 @@
                     <td class="combinationCol"></td>
                 </tr>
                 <tr class="emptyRow">
+                    <td class="desc">THREE ALIKE</td>
                     <td class="combinationCol"><img src="imgs/any.jpg"></td>
                     <td class="combinationCol"><img src="imgs/any.jpg"></td>
                     <td class="combinationCol"><img src="imgs/any.jpg"></td>
@@ -122,7 +141,8 @@
                     <td class="combinationCol"></td>
                 </tr>
                 <tr class="emptyRow">
-                    <td rowspan="2" class="diceCol" id="die4"></td>
+                    <td rowspan="2" class="diceCol" id="die4" onclick="select(this)"></td>
+                    <td class="desc">FOUR ALIKE</td>
                     <td class="combinationCol"><img src="imgs/any.jpg"></td>
                     <td class="combinationCol"><img src="imgs/any.jpg"></td>
                     <td class="combinationCol"><img src="imgs/any.jpg"></td>
@@ -130,6 +150,7 @@
                     <td class="combinationCol"></td>
                 </tr>
                 <tr class="emptyRow">
+                    <td class="desc">SMALL STREET</td>
                     <td class="combinationCol"><img src="imgs/one.jpg"></td>
                     <td class="combinationCol"><img src="imgs/two.jpg"></td>
                     <td class="combinationCol"><img src="imgs/three.jpg"></td>
@@ -137,7 +158,8 @@
                     <td class="combinationCol"><img src="imgs/five.jpg"></td>
                 </tr>
                 <tr class="emptyRow">
-                    <td rowspan="2" class="diceCol" id="die5"></td>
+                    <td rowspan="2" class="diceCol" id="die5" onclick="select(this)"></td>
+                    <td class="desc">LARGE STREET</td>
                     <td class="combinationCol"><img src="imgs/two.jpg"></td>
                     <td class="combinationCol"><img src="imgs/three.jpg"></td>
                     <td class="combinationCol"><img src="imgs/four.jpg"></td>
@@ -145,6 +167,7 @@
                     <td class="combinationCol"><img src="imgs/six.jpg"></td>
                 </tr>
                 <tr class="emptyRow">
+                    <td class="desc">YAHTZEE</td>
                     <td class="combinationCol"><img src="imgs/any.jpg"></td>
                     <td class="combinationCol"><img src="imgs/any.jpg"></td>
                     <td class="combinationCol"><img src="imgs/any.jpg"></td>
@@ -153,6 +176,7 @@
                 </tr>
                 <tr class="emptyRow">
                     <td></td>
+                    <td class="desc">CHANCE</td>
                     <td class="combinationCol"><img src="imgs/any.jpg"></td>
                     <td class="combinationCol"><img src="imgs/any.jpg"></td>
                     <td class="combinationCol"><img src="imgs/any.jpg"></td>

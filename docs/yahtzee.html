@@ -36,11 +36,13 @@
         button{
             width:100%;
             height:68px;
+            font-family: 'Mountains of Christmas', cursive;
+            font-size: 40pt;
         }
 
         .keeping img{
-            width:110px;
-            height:110px;
+            width:100px;
+            height:100px;
         }
 
         .desc {
@@ -78,7 +80,7 @@
         }
 
         function select(dieTd){
-            dieTd.classList.add("keeping");
+            dieTd.classList.toggle("keeping");
         }
         </script>
 
@@ -86,7 +88,7 @@
     <body>
         <table>
             <tr class="emptyRow">
-                <td><button onclick="roll()">Roll</button></td>
+                <td><button onclick="roll()" >Roll</button></td>
                 <td rowspan="6" class="desc">SCHOOL</td>
                 <td class="combinationCol"><img src="imgs/one.jpg"></td>
                 <td class="combinationCol"><img src="imgs/one.jpg"></td>

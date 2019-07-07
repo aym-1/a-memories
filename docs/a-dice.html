@@ -1,22 +1,53 @@
+<!DOCTYPE html>
 <html>
     <head>
 
     <style>
-        #one {
-            position: absolute;
-            width:100px;
-            height:100px;
-            /*clip: rect(0px, 0px, 100px, 100px);*/
+
+        .dieSide {
+
+            width:200px;
+            height:200px;
         }
+
+        .invisible{
+            display: none;  
+        }
+        
     </style>
+    <script>
+
+    function myRandom() {
+        var items = ["one", "two", "three", "four", "five", "six"];
+        for(var index = 0; index< items.length; index = index + 1){
+            var id = items[index];
+            document.getElementById(id).classList.add("invisible");
+        }
+        
+        var itemIndex = Math.floor(Math.random() * items.length);
+        var itemId = items[itemIndex]; 
+        var item = document.getElementById(itemId);
+        item.classList.remove("invisible");
+    }
+         
+             
+    </script>
+         
     </head>
     <body>
-        <img id="one" src="imgs/dice.jpg">
-        <img src="imgs/two.jpg">
-        <img src="imgs/three.jpg">
-        <img src="imgs/four.jpg">
-        <img src="imgs/five.jpg">
-        <img src="imgs/six.jpg">
+
+        <p>Click the button to roll a dice</p>
+
+        <button onclick="myRandom()">Roll</button>
+
+        <img id="one" class="dieSide invisible"  src="imgs/one.jpg">
+        <img id="two" class="dieSide invisible" src="imgs/two.jpg">
+        <img id="three" class="dieSide invisible" src="imgs/three.jpg">
+        <img id="four" class="dieSide invisible" src="imgs/four.jpg">
+        <img id="five" class="dieSide invisible" src="imgs/five.jpg">
+        <img id="six" class="dieSide invisible" src="imgs/six.jpg">
+    
     </body>
 
+    
 </html>

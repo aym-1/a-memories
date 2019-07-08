@@ -61,22 +61,30 @@
             img.setAttribute("data-side", index+1);
             return img;
         }
+        
+        function reroll(dieTd) {
+           if (dieTd.classList.contains("keeping")){
+               ;
+           } else {
+                while (dieTd.childNodes.length > 0){
+                    dieTd.removeChild(dieTd.childNodes[0]);
+                }
+
+                var dieImg = createDieImg();
+                dieTd.appendChild(dieImg);
+           }
+        }
 
         function roll() {
-            var die1Img = createDieImg();
-            document.getElementById("die1").appendChild(die1Img);
+            reroll(document.getElementById("die1"));
 
-            var die2Img = createDieImg();
-            document.getElementById("die2").appendChild(die2Img);
+            reroll(document.getElementById("die2"));
 
-            var die3Img = createDieImg();
-            document.getElementById("die3").appendChild(die3Img);
+            reroll(document.getElementById("die3"));
 
-            var die4Img = createDieImg();
-            document.getElementById("die4").appendChild(die4Img);
+            reroll(document.getElementById("die4"));
 
-            var die5Img = createDieImg();
-            document.getElementById("die5").appendChild(die5Img);
+            reroll(document.getElementById("die5"));
         }
 
         function select(dieTd){

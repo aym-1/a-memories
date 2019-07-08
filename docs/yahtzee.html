@@ -36,8 +36,8 @@
         button{
             width:100%;
             height:68px;
-            font-family: 'Mountains of Christmas', cursive;
-            font-size: 40pt;
+            text-align: left;
+            vertical-align: middle;
         }
 
         .keeping img{
@@ -49,6 +49,19 @@
             text-align: center;
             font-family: 'Mountains of Christmas', cursive;
         }
+
+        #roll {
+            font-family: 'Mountains of Christmas', cursive;
+            font-size: 28pt;
+            display: inline-block;
+        }
+        
+        #attempts {
+            font-family: 'Mountains of Christmas', cursive;
+            font-size: 8pt;
+            display: inline-block;
+        }
+
         </style>
 
         <script>
@@ -75,16 +88,23 @@
            }
         }
 
-        function roll() {
+        function roll() {            
             reroll(document.getElementById("die1"));
-
             reroll(document.getElementById("die2"));
-
             reroll(document.getElementById("die3"));
-
             reroll(document.getElementById("die4"));
-
             reroll(document.getElementById("die5"));
+
+            var values = document.querySelector("#attempts");
+            var attempt = parseInt(values.dataset.attempt);
+            if (attempt >= 3){
+                document.getElementById("rollButton").setAttribute("disabled", "disabled");
+            }
+
+            attempt = attempt + 1;
+            values.dataset.attempt = attempt.toString();
+            var texts = ["never happens", "first of three", "second last", "very last", "out of attempts"];
+            document.getElementById("attempts").innerText = texts[attempt];
         }
 
         function select(dieTd){
@@ -96,7 +116,12 @@
     <body>
         <table>
             <tr class="emptyRow">
-                <td><button onclick="roll()" >Roll</button></td>
+                <td>
+                    <button id="rollButton" onclick="roll()">
+                        <div id="roll">Roll</div>
+                        <div id="attempts" data-attempt="1">first of three</div>
+                    </button>
+                </td>
                 <td rowspan="6" class="desc">SCHOOL</td>
                 <td class="combinationCol"><img src="imgs/one.jpg"></td>
                 <td class="combinationCol"><img src="imgs/one.jpg"></td>

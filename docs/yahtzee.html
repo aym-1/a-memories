@@ -49,25 +49,49 @@
             text-align: center;
             font-family: 'Mountains of Christmas', cursive;
             display: block;
-            width: 90%;
+            width: 100%;
             border: none;
             background-color: #4CAF50;
             color: white;
-            padding: 14px 28px;
+            padding: 20px 30px;
             font-size: 16px;
             cursor: pointer;
         }
 
-        #roll {
+        .desc:hover {
+            background-color: gray;
+            color: black;
+        }
+
+        .roll {
             font-family: 'Mountains of Christmas', cursive;
             font-size: 28pt;
             display: inline-block;
         }
         
+        .roll:hover {
+            background-color: aqua;
+            cursor: pointer;
+        }
+
+        .rollButton:hover {
+            background-color: aqua;
+            cursor: pointer;
+        }
         #attempts {
             font-family: 'Mountains of Christmas', cursive;
             font-size: 8pt;
             display: inline-block;
+        }
+
+        .arrow {
+            background-image: url("imgs/arrow.jpg");
+            background-repeat: no-repeat;
+        }
+
+        .arrow:hover {
+            background-color: black;
+            cursor: pointer;
         }
         </style>
 
@@ -124,8 +148,8 @@
         <table align="center">
             <tr class="emptyRow">
                 <td>
-                    <button id="rollButton" onclick="roll()">
-                        <div id="roll">Roll</div>
+                    <button class="rollButton" onclick="roll()">
+                        <div class="roll">Roll</div>
                         <div id="attempts" data-attempt="1">first of three</div>
                     </button>
                 </td>
@@ -176,19 +200,19 @@
                 </tr>
                 <tr class="emptyRow">
                     <td><button class="desc">THREE ALIKE</button></td>
-                    <td class="combinationCol"><img src="imgs/any.jpg"></td>
-                    <td class="combinationCol"><img src="imgs/any.jpg"></td>
-                    <td class="combinationCol"><img src="imgs/any.jpg"></td>
+                    <td class="combinationCol"><img src="imgs/any1.jpg"></td>
+                    <td class="combinationCol"><img src="imgs/any1.jpg"></td>
+                    <td class="combinationCol"><img src="imgs/any1.jpg"></td>
                     <td class="combinationCol"></td>
                     <td class="combinationCol"></td>
                 </tr>
                 <tr class="emptyRow">
                     <td rowspan="2" class="diceCol" id="die4" onclick="select(this)"></td>
                     <td><button class="desc">FOUR ALIKE</button></td>
-                    <td class="combinationCol"><img src="imgs/any.jpg"></td>
-                    <td class="combinationCol"><img src="imgs/any.jpg"></td>
-                    <td class="combinationCol"><img src="imgs/any.jpg"></td>
-                    <td class="combinationCol"><img src="imgs/any.jpg"></td>
+                    <td class="combinationCol"><img src="imgs/any1.jpg"></td>
+                    <td class="combinationCol"><img src="imgs/any1.jpg"></td>
+                    <td class="combinationCol"><img src="imgs/any1.jpg"></td>
+                    <td class="combinationCol"><img src="imgs/any1.jpg"></td>
                     <td class="combinationCol"></td>
                 </tr>
                 <tr class="emptyRow">
@@ -210,14 +234,14 @@
                 </tr>
                 <tr class="emptyRow">
                     <td><button class="desc">YAHTZEE</button></td>
-                    <td class="combinationCol"><img src="imgs/any.jpg"></td>
-                    <td class="combinationCol"><img src="imgs/any.jpg"></td>
-                    <td class="combinationCol"><img src="imgs/any.jpg"></td>
-                    <td class="combinationCol"><img src="imgs/any.jpg"></td>
-                    <td class="combinationCol"><img src="imgs/any.jpg"></td>
+                    <td class="combinationCol"><img src="imgs/any1.jpg"></td>
+                    <td class="combinationCol"><img src="imgs/any1.jpg"></td>
+                    <td class="combinationCol"><img src="imgs/any1.jpg"></td>
+                    <td class="combinationCol"><img src="imgs/any1.jpg"></td>
+                    <td class="combinationCol"><img src="imgs/any1.jpg"></td>
                 </tr>
                 <tr class="emptyRow">
-                    <td></td>
+                    <td><button class="arrow"></button></td>
                     <td><button class="desc">CHANCE</button></td>
                     <td class="combinationCol"><img src="imgs/any.jpg"></td>
                     <td class="combinationCol"><img src="imgs/any.jpg"></td>

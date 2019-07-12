@@ -48,6 +48,14 @@
         .desc {
             text-align: center;
             font-family: 'Mountains of Christmas', cursive;
+            display: block;
+            width: 90%;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 28px;
+            font-size: 16px;
+            cursor: pointer;
         }
 
         #roll {
@@ -61,7 +69,6 @@
             font-size: 8pt;
             display: inline-block;
         }
-
         </style>
 
         <script>
@@ -122,7 +129,7 @@
                         <div id="attempts" data-attempt="1">first of three</div>
                     </button>
                 </td>
-                <td rowspan="6" class="desc">SCHOOL</td>
+                <td rowspan="6"><button class="desc">SCHOOL</button></td>
                 <td class="combinationCol"><img src="imgs/one.jpg"></td>
                 <td class="combinationCol"><img src="imgs/one.jpg"></td>
                 <td class="combinationCol"><img src="imgs/one.jpg"></td>
@@ -168,7 +175,7 @@
                     <td class="combinationCol"></td>
                 </tr>
                 <tr class="emptyRow">
-                    <td class="desc">THREE ALIKE</td>
+                    <td><button class="desc">THREE ALIKE</button></td>
                     <td class="combinationCol"><img src="imgs/any.jpg"></td>
                     <td class="combinationCol"><img src="imgs/any.jpg"></td>
                     <td class="combinationCol"><img src="imgs/any.jpg"></td>
@@ -177,7 +184,7 @@
                 </tr>
                 <tr class="emptyRow">
                     <td rowspan="2" class="diceCol" id="die4" onclick="select(this)"></td>
-                    <td class="desc">FOUR ALIKE</td>
+                    <td><button class="desc">FOUR ALIKE</button></td>
                     <td class="combinationCol"><img src="imgs/any.jpg"></td>
                     <td class="combinationCol"><img src="imgs/any.jpg"></td>
                     <td class="combinationCol"><img src="imgs/any.jpg"></td>
@@ -185,7 +192,7 @@
                     <td class="combinationCol"></td>
                 </tr>
                 <tr class="emptyRow">
-                    <td class="desc">SMALL STREET</td>
+                    <td><button class="desc">STREET</button></td>
                     <td class="combinationCol"><img src="imgs/one.jpg"></td>
                     <td class="combinationCol"><img src="imgs/two.jpg"></td>
                     <td class="combinationCol"><img src="imgs/three.jpg"></td>
@@ -194,7 +201,7 @@
                 </tr>
                 <tr class="emptyRow">
                     <td rowspan="2" class="diceCol" id="die5" onclick="select(this)"></td>
-                    <td class="desc">LARGE STREET</td>
+                    <td><button class="desc">LARGE STREET</button></td>
                     <td class="combinationCol"><img src="imgs/two.jpg"></td>
                     <td class="combinationCol"><img src="imgs/three.jpg"></td>
                     <td class="combinationCol"><img src="imgs/four.jpg"></td>
@@ -202,7 +209,7 @@
                     <td class="combinationCol"><img src="imgs/six.jpg"></td>
                 </tr>
                 <tr class="emptyRow">
-                    <td class="desc">YAHTZEE</td>
+                    <td><button class="desc">YAHTZEE</button></td>
                     <td class="combinationCol"><img src="imgs/any.jpg"></td>
                     <td class="combinationCol"><img src="imgs/any.jpg"></td>
                     <td class="combinationCol"><img src="imgs/any.jpg"></td>
@@ -211,7 +218,7 @@
                 </tr>
                 <tr class="emptyRow">
                     <td></td>
-                    <td class="desc">CHANCE</td>
+                    <td><button class="desc">CHANCE</button></td>
                     <td class="combinationCol"><img src="imgs/any.jpg"></td>
                     <td class="combinationCol"><img src="imgs/any.jpg"></td>
                     <td class="combinationCol"><img src="imgs/any.jpg"></td>

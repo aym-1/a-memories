@@ -7,32 +7,26 @@
         td {
             border: 1px solid black;
         }
-
         .diceCol{
             width: 140px;
             height: 140px;
             text-align : center;
         }
-
         .combinationCol{
             width: 70px;
             height: 70px;
         }
-
         .combinationCol img{
             width:68px;
             height:68px;
         }
-
         .diceCol img{
             width:138px;
             height:138px;
         }
-
         .emptyRow .combinationCol img{
             opacity: 0.25;
         }
-
         button{
             width:100%;
             height:80px;    
@@ -40,12 +34,10 @@
             vertical-align: middle;
             background-image: 
         }
-
         .keeping img{
             width:100px;
             height:100px;
         }
-
         .desc {
             text-align: center;
             font-family: 'Mountains of Christmas', cursive;
@@ -58,12 +50,10 @@
             font-size: 16px;
             cursor: pointer;
         }
-
         .desc:hover {
             background-color: gray;
             color: black;
         }
-
         .roll {
             font-family: 'Mountains of Christmas', cursive;
             font-size: 28pt;
@@ -74,7 +64,6 @@
             background-color: aqua;
             cursor: pointer;
         }
-
         .rollButton:hover {
             background-color: aqua;
             cursor: pointer;
@@ -84,13 +73,11 @@
             font-size: 8pt;
             display: inline-block;
         }
-
         .arrow {
             background-image: url("imgs/arrow.jpg");
             background-repeat: no-repeat;
             background-size: cover;
         }
-
         .arrow:hover {
             background-color: black;
             cursor: pointer;
@@ -115,31 +102,26 @@
                 while (dieTd.childNodes.length > 0){
                     dieTd.removeChild(dieTd.childNodes[0]);
                 }
-
                 var dieImg = createDieImg();
                 dieTd.appendChild(dieImg);
            }
         }
-
         function roll() {            
             reroll(document.getElementById("die1"));
             reroll(document.getElementById("die2"));
             reroll(document.getElementById("die3"));
             reroll(document.getElementById("die4"));
             reroll(document.getElementById("die5"));
-
             var values = document.querySelector("#attempts");
             var attempt = parseInt(values.dataset.attempt);
             if (attempt >= 3){
                 document.getElementById("rollButton").setAttribute("disabled", "disabled");
             }
-
             attempt = attempt + 1;
             values.dataset.attempt = attempt.toString();
             var texts = ["never happens", "first of three", "second last", "very last", "out of attempts"];
             document.getElementById("attempts").innerText = texts[attempt];
         }
-
         function select(dieTd){
             dieTd.classList.toggle("keeping");
         }

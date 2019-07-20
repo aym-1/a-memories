@@ -64,18 +64,14 @@
             display: inline-block;
         }
         
-        .roll:hover {
-            background-color: aqua;
-            cursor: pointer;
-        }
 
-        .rollButton {
+        #rollButton {
             width: 100%;
             height: 100%;
         }
 
-        .rollButton:hover {
-            background-color: aqua;
+        #rollButton:hover {
+            color: gray;
             cursor: pointer;
         }
         #attempts {
@@ -135,6 +131,93 @@
         function select(dieTd){
             dieTd.classList.toggle("keeping");
         }
+        
+        function getDieValue(dieId) {
+            var children = document.getElementById(dieId).childNodes;
+            if (children.length === 1) {
+                var die = parseInt(children[0].getAttribute("data-side"));
+                return die;
+            } else {
+                return 0;
+            }
+        }
+        
+        function getDieValues() {
+            var die1 = getDieValue("die1");
+            var die2 = getDieValue("die2");
+            var die3 = getDieValue("die3");
+            var die4 = getDieValue("die4");
+            var die5 = getDieValue("die5");
+
+            return [die1, die2, die3, die4, die5];
+        }
+
+        function count(dies, value) {
+            var count = 0;
+            for (var index = 0; index < dies.length; index = index + 1) {
+                if (dies[index] === value) {
+                    count = count + 1;
+                }
+            }
+            return count;
+        }
+
+        function clickAtOnes() {
+            var dies = getDieValues();
+            var cnt = count(1);
+            if (cnt < 3) {
+                cnt = 0;
+            }
+
+        }
+
+        function clickAtTwos() {
+
+        }
+
+        function clickAtThrees() {
+
+        }
+
+        function clickAtFours() {
+
+        }
+
+        function clickAtFives() {
+
+        }
+
+        function clickAtSixs() {
+
+        }
+
+        function clickAtThreeAKind() {
+
+        }
+
+        function clickAtFourAKind() {
+
+        }
+
+        function clickAtFullHouse(){
+
+        }
+
+        function clickAtSmallStraight() {
+
+        }
+
+        function clickAtLargeStraight() {
+
+        }
+
+        function clickAtChance() {
+
+        }
+
+        function clickAtYahtzee() {
+
+        }
         </script>
 
     </head>
@@ -142,114 +225,114 @@
         <table>
             <tr class="emptyRow">
                 <td rowspan="2">
-                    <button class="rollButton" onclick="roll()">
+                    <button id="rollButton" onclick="roll()">
                         <div class="roll">Roll</div>
                         <div id="attempts" data-attempt="1">first of three</div>
                     </button>
                 </td>
                 <td rowspan="6"><button class="desc">SCHOOL</button></td>
-                <td class="combinationCol"><img src="imgs/one.jpg"></td>
-                <td class="combinationCol"><img src="imgs/one.jpg"></td>
-                <td class="combinationCol"><img src="imgs/one.jpg"></td>
+                <td class="combinationCol" onclick='clickAtOnes()'><img src="imgs/one.jpg"></td>
+                <td class="combinationCol" onclick='clickAtOnes()'><img src="imgs/one.jpg"></td>
+                <td class="combinationCol" onclick='clickAtOnes()'><img src="imgs/one.jpg"></td>
                 <td class="combinationCol"></td>
                 <td class="combinationCol"></td>
             </tr>
             <tr class="emptyRow">
-                <td class="combinationCol"><img src="imgs/two.jpg"></td>
-                <td class="combinationCol"><img src="imgs/two.jpg"></td>
-                <td class="combinationCol"><img src="imgs/two.jpg"></td>
+                <td class="combinationCol" onclick='clickAtTwos()'><img src="imgs/two.jpg"></td>
+                <td class="combinationCol" onclick='clickAtTwos()'><img src="imgs/two.jpg"></td>
+                <td class="combinationCol" onclick='clickAtTwos()'><img src="imgs/two.jpg"></td>
                 <td class="combinationCol"></td>
                 <td class="combinationCol"></td>
             </tr>
             <tr class="emptyRow">
                 <td rowspan="2" class="diceCol" id="die1" onclick="select(this)"></td>
-                <td class="combinationCol"><img src="imgs/three.jpg"></td>
-                <td class="combinationCol"><img src="imgs/three.jpg"></td>
-                <td class="combinationCol"><img src="imgs/three.jpg"></td>
+                <td class="combinationCol" onclick='clickAtThrees()'><img src="imgs/three.jpg"></td>
+                <td class="combinationCol" onclick='clickAtThrees()'><img src="imgs/three.jpg"></td>
+                <td class="combinationCol" onclick='clickAtThrees()'><img src="imgs/three.jpg"></td>
                 <td class="combinationCol"></td>
                 <td class="combinationCol"></td>
             </tr>
             <tr class="emptyRow">
-                <td class="combinationCol"><img src="imgs/four.jpg"></td>
-                <td class="combinationCol"><img src="imgs/four.jpg"></td>
-                <td class="combinationCol"><img src="imgs/four.jpg"></td>
+                <td class="combinationCol" onclick='clickAtFour()'><img src="imgs/four.jpg"></td>
+                <td class="combinationCol" onclick='clickAtFours()'><img src="imgs/four.jpg"></td>
+                <td class="combinationCol" onclick='clickAtFours()'><img src="imgs/four.jpg"></td>
                 <td class="combinationCol"></td>
                 <td class="combinationCol"></td>
             </tr>
             <tr class="emptyRow">
                 <td rowspan="2" class="diceCol" id="die2" onclick="select(this)"></td>
-                <td class="combinationCol"><img src="imgs/five.jpg"></td>
-                <td class="combinationCol"><img src="imgs/five.jpg"></td>
-                <td class="combinationCol"><img src="imgs/five.jpg"></td>
+                <td class="combinationCol" onclick='clickAtFives()'><img src="imgs/five.jpg"></td>
+                <td class="combinationCol" onclick='clickAtFives()'><img src="imgs/five.jpg"></td>
+                <td class="combinationCol" onclick='clickAtFives()'><img src="imgs/five.jpg"></td>
                 <td class="combinationCol"></td>
                 <td class="combinationCol"></td>
             </tr>
             <tr class="emptyRow">
-                <td class="combinationCol"><img src="imgs/six.jpg"></td>
-                <td class="combinationCol"><img src="imgs/six.jpg"></td>
-                <td class="combinationCol"><img src="imgs/six.jpg"></td>
+                <td class="combinationCol" onclick='clickAtSixs()'><img src="imgs/six.jpg"></td>
+                <td class="combinationCol" onclick='clickAtSixs()'><img src="imgs/six.jpg"></td>
+                <td class="combinationCol" onclick='clickAtSix()'><img src="imgs/six.jpg"></td>
                 <td class="combinationCol"></td>
                 <td class="combinationCol"></td>
             </tr>
             <tr class="emptyRow">
                 <td rowspan="2" class="diceCol" id="die3" onclick="select(this)"></td>
-                <td><button class="desc">THREE ALIKE</button></td>
-                <td class="combinationCol"><img src="imgs/any1.jpg"></td>
-                <td class="combinationCol"><img src="imgs/any1.jpg"></td>
-                <td class="combinationCol"><img src="imgs/any1.jpg"></td>
+                <td><button class="desc">THREE OF A KIND</button></td>
+                <td class="combinationCol" onclick='clickAtThreeAKind'><img src="imgs/any1.jpg"></td>
+                <td class="combinationCol" onclick='clickAtThreeAKind'><img src="imgs/any1.jpg"></td>
+                <td class="combinationCol" onclick='clickAtThreeAKind'><img src="imgs/any1.jpg"></td>
                 <td class="combinationCol"></td>
                 <td class="combinationCol"></td>
             </tr>
             <tr class="emptyRow">
-                <td><button class="desc">FOUR ALIKE</button></td>
-                <td class="combinationCol"><img src="imgs/any1.jpg"></td>
-                <td class="combinationCol"><img src="imgs/any1.jpg"></td>
-                <td class="combinationCol"><img src="imgs/any1.jpg"></td>
-                <td class="combinationCol"><img src="imgs/any1.jpg"></td>
+                <td><button class="desc">FOUR OF A KIND</button></td>
+                <td class="combinationCol" onclick='clickAtFourAKind'><img src="imgs/any1.jpg"></td>
+                <td class="combinationCol" onclick='clickAtFourAKind'><img src="imgs/any1.jpg"></td>
+                <td class="combinationCol" onclick='clickAtFourAKind'><img src="imgs/any1.jpg"></td>
+                <td class="combinationCol" onclick='clickAtFourAKind'><img src="imgs/any1.jpg"></td>
                 <td class="combinationCol"></td>
             </tr>
             <tr class="emptyRow">
                 <td rowspan="2" class="diceCol" id="die4" onclick="select(this)"></td>
                 <td><button class="desc">Full House</button></td>
-                <td class="combinationCol"><img src="imgs/variableX.jpg"></td>
-                <td class="combinationCol"><img src="imgs/variableX.jpg"></td>
-                <td class="combinationCol"><img src="imgs/variableX.jpg"></td>
-                <td class="combinationCol"><img src="imgs/variableY.jpg"></td>
-                <td class="combinationCol"><img src="imgs/variableY.jpg"></td>
+                <td class="combinationCol" onclick='clickAtFullHouse'><img src="imgs/variableX.jpg"></td>
+                <td class="combinationCol" onclick='clickAtFullHouse'><img src="imgs/variableX.jpg"></td>
+                <td class="combinationCol" onclick='clickAtFullHouse'><img src="imgs/variableX.jpg"></td>
+                <td class="combinationCol" onclick='clickAtFullHouse'><img src="imgs/variableY.jpg"></td>
+                <td class="combinationCol" onclick='clickAtFullHouse'><img src="imgs/variableY.jpg"></td>
             </tr>
             <tr class="emptyRow">
                 <td><button class="desc">Small Straight</button></td>
-                <td class="combinationCol"><img src="imgs/one.jpg"></td>
-                <td class="combinationCol"><img src="imgs/two.jpg"></td>
-                <td class="combinationCol"><img src="imgs/three.jpg"></td>
-                <td class="combinationCol"><img src="imgs/four.jpg"></td>
-                <td class="combinationCol"><img src="imgs/five.jpg"></td>
+                <td class="combinationCol" onclick='clickAtSmallStraight'><img src="imgs/one.jpg"></td>
+                <td class="combinationCol" onclick='clickAtSmallStraight'><img src="imgs/two.jpg"></td>
+                <td class="combinationCol" onclick='clickAtSmallStraight'><img src="imgs/three.jpg"></td>
+                <td class="combinationCol" onclick='clickAtSmallStraight'><img src="imgs/four.jpg"></td>
+                <td class="combinationCol" onclick='clickAtSmallStraight'><img src="imgs/five.jpg"></td>
             </tr>
             <tr class="emptyRow">
                 <td rowspan="2" class="diceCol" id="die5" onclick="select(this)"></td>
                 <td><button class="desc">LARGE Straight</button></td>
-                <td class="combinationCol"><img src="imgs/two.jpg"></td>
-                <td class="combinationCol"><img src="imgs/three.jpg"></td>
-                <td class="combinationCol"><img src="imgs/four.jpg"></td>
-                <td class="combinationCol"><img src="imgs/five.jpg"></td>
-                <td class="combinationCol"><img src="imgs/six.jpg"></td>
+                <td class="combinationCol" onclick='clickAtLargeStraight'><img src="imgs/two.jpg"></td>
+                <td class="combinationCol" onclick='clickAtLargeStraight'><img src="imgs/three.jpg"></td>
+                <td class="combinationCol" onclick='clickAtLargeStraight'><img src="imgs/four.jpg"></td>
+                <td class="combinationCol" onclick='clickAtLargeStraight'><img src="imgs/five.jpg"></td>
+                <td class="combinationCol" onclick='clickAtLargeStraight'><img src="imgs/six.jpg"></td>
             </tr>
             <tr class="emptyRow">
-                <td><button class="desc">YAHTZEE</button></td>
-                <td class="combinationCol"><img src="imgs/any1.jpg"></td>
-                <td class="combinationCol"><img src="imgs/any1.jpg"></td>
-                <td class="combinationCol"><img src="imgs/any1.jpg"></td>
-                <td class="combinationCol"><img src="imgs/any1.jpg"></td>
-                <td class="combinationCol"><img src="imgs/any1.jpg"></td>
+                <td><button class="desc">Chance</button></td>
+                <td class="combinationCol" onclick='clickAtChance'><img src="imgs/any.jpg"></td>
+                <td class="combinationCol" onclick='clickAtChance'><img src="imgs/any.jpg"></td>
+                <td class="combinationCol" onclick='clickAtChance'><img src="imgs/any.jpg"></td>
+                <td class="combinationCol" onclick='clickAtChance'><img src="imgs/any.jpg"></td>
+                <td class="combinationCol" onclick='clickAtChance'><img src="imgs/any.jpg"></td>
             </tr>
             <tr class="emptyRow">
                 <td><button class="arrow"></button></td>
-                <td><button class="desc">CHANCE</button></td>
-                <td class="combinationCol"><img src="imgs/any.jpg"></td>
-                <td class="combinationCol"><img src="imgs/any.jpg"></td>
-                <td class="combinationCol"><img src="imgs/any.jpg"></td>
-                <td class="combinationCol"><img src="imgs/any.jpg"></td>
-                <td class="combinationCol"><img src="imgs/any.jpg"></td>
+                <td><button class="desc">YAHTZEE</button></td>
+                <td class="combinationCol" onclick='clickAtYahtzee'><img src="imgs/any1.jpg"></td>
+                <td class="combinationCol" onclick='clickAtYahtzee'><img src="imgs/any1.jpg"></td>
+                <td class="combinationCol" onclick='clickAtYahtzee'><img src="imgs/any1.jpg"></td>
+                <td class="combinationCol" onclick='clickAtYahtzee'><img src="imgs/any1.jpg"></td>
+                <td class="combinationCol" onclick='clickAtYahtzee'><img src="imgs/any1.jpg"></td>
             </tr>
         </table>
     </body>

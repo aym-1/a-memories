@@ -8,19 +8,26 @@
     </head>
     <body>
         <P>Press the "Random" button to get a random picture</P>
-        <button id = "sizeButton">Random</button>
+        <button id = "sizeButton" onclick="randomImg">Random</button>
         <table>
             <tr>
                 <td></td>
             </tr>
         </table>
         <script>
-        var Imgs = [
-        <img src = "imgs/Bat.jpg">
-        <img src = "imgs/C.jpg">
-        <img src = "imgs/Duck.jpg">
-        <img src = "imgs/Earth.jpg">
-        <img src = "imgs/Europa.jpg">
+            function randomImg(){
+                for (var i = 0; i < imgs.length; i++ ){
+                    var newImg = getRandomItem(imgs);
+                    imgs.Length[i].innerHTML = fruit.name + '<img src +fruit.image+"">';
+                }
+                console.log(randomImg);
+            }
+        var imgs = []
+        imgs.push (img src = "imgs/Bat.jpg");
+        imgs.push (img src = "imgs/C.jpg");
+        imgs.push (img src = "imgs/Duck.jpg");
+        imgs.push (img src = "imgs/Earth.jpg");
+        imgs.push (img src = "imgs/Europa.jpg");
         <img src = "imgs/Garfield.jpg">
         <img src = "imgs/Goofy.jpg">
         <img src = "imgs/Io.jpg">
@@ -44,7 +51,9 @@
         <img src = "imgs/TandJ.jpg">
         <img src = "imgs/Uranus.jpg">
         <img src = "imgs/Venus.jpg">
-        ]
+        
+            
+        
     </script>
     </body>
 </html>
